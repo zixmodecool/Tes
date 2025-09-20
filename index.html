@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Downloader TikTok</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      background: rgba(255,255,255,0.05);
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: #ff3cac;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      background: linear-gradient(90deg, #ff3cac, #784ba0, #2b86c5);
+      color: white;
+      transition: 0.3s;
+    }
+    button:hover {
+      opacity: 0.9;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #ddd;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Download Video TikTok</h1>
+    <input type="text" id="videoUrl" placeholder="Tempel tautan video di sini">
+    <button onclick="downloadVideo()">Download</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function downloadVideo() {
+      const url = document.getElementById("videoUrl").value;
+      const result = document.getElementById("result");
+
+      if(!url) {
+        result.innerHTML = "⚠️ Masukkan URL video dulu!";
+        return;
+      }
+
+      // sementara hanya tampilkan link, 
+      // untuk benar-benar download perlu API pihak ketiga
+      result.innerHTML = `
+        ✅ Link berhasil ditempel:<br>
+        <a href="${url}" target="_blank" style="color:#4dd0e1">${url}</a>
+      `;
+    }
+  </script>
+</body>
+</html>
